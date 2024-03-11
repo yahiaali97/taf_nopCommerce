@@ -1,3 +1,5 @@
+package base;
+
 import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,7 +18,8 @@ public class TestBase {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.navigate().to("https://demo.nopcommerce.com/login");
+        ClearCache();
+        driver.get("https://demo.nopcommerce.com/");
     }
 
     @AfterMethod
@@ -41,5 +44,9 @@ public class TestBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void ClearCache() {
+        driver.manage().deleteAllCookies();
     }
 }
