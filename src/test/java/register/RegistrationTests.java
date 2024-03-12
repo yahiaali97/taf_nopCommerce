@@ -1,6 +1,5 @@
 package register;
 
-
 import base.TestBase;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -16,10 +15,10 @@ public class RegistrationTests extends TestBase {
         homeObject.OpenRegisterPage();
 
         registerObject = new RegistrationPage(driver);
-        registerObject.loginValidUser("Yahya",
+        registerObject.RegisterNewUser("Yahya",
                 "Ali",
-                "yahiaaali11@gmail.com",
-                "BConnect",
+                "yahyaali@example.com",
+                "XCompany",
                 "123456",
                 "123456");
     }
