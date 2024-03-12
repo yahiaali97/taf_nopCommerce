@@ -18,8 +18,6 @@ public class RegistrationTests extends TestBase {
         registerObject.RegisterNewUser("Yahya",
                 "Ali",
                 "yahyaali@example.com",
-                "XCompany",
-                "123456",
                 "123456");
     }
 }

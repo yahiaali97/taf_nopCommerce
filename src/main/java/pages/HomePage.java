@@ -11,14 +11,14 @@ public class HomePage extends PageBase {
         super(driver);
     }
 
-    WebElement registerBtn = driver.findElement(By.linkText("Register"));
-    WebElement loginBtn = driver.findElement(By.linkText("Log in"));
+    WebElement registerLink = driver.findElement(By.linkText("Register"));
+    WebElement loginLink = driver.findElement(By.linkText("Log in"));
 
     public void OpenRegisterPage() {
-        PageBase.clickButton(registerBtn);
+        PageBase.clickButton(registerLink);
     }
 
     public void OpenLoginPage() {
-        PageBase.clickButton(loginBtn);
+        clickButton(loginLink);
     }
 }
