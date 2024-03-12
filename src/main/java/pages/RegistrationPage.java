@@ -4,6 +4,7 @@ import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,7 +17,7 @@ public class RegistrationPage extends PageBase {
     By Password = By.id("Password");
     By ConfirmPass = By.id("ConfirmPassword");
     By RegisterSubmit = By.id("register-button");
-    By LogoutLink = By.xpath("//a[@class='ico-logout']");
+    public By LogoutLink = By.xpath("//a[@class='ico-logout']");
     By myAccountLink = By.linkText("My account");
 
     public RegistrationPage(WebDriver driver) {
@@ -37,8 +38,8 @@ public class RegistrationPage extends PageBase {
     }
 
     public void usrLogout() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(LogoutLink)));
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(d -> ExpectedConditions.elementToBeClickable(driver.findElement(LogoutLink)));
     }
 
     public void OpenMyAccountPage() {

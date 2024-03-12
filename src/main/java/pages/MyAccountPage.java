@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MyAccountPage extends PageBase {
-    By changePassword = By.xpath("//a[@href=\"/customer/changepassword\"]");
+    public By changePassword = By.xpath("//a[@href=\"/customer/changepassword\"]");
     By oldPassword = By.id("OldPassword");
     By newPassword = By.id("NewPassword");
     By confirmNewPassword = By.id("ConfirmNewPassword");

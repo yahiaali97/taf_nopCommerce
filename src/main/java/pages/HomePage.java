@@ -12,7 +12,7 @@ public class HomePage extends PageBase {
 
     By registerLink = By.linkText("Register");
 
-    By loginLink = By.linkText("Log in");
+    public By loginLink = By.linkText("Log in");
 
     public void OpenRegisterPage() {
         clickButton(driver.findElement(registerLink));
