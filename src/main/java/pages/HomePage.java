@@ -15,7 +15,7 @@ public class HomePage extends PageBase {
     By loginLink = By.linkText("Log in");
 
     public void OpenRegisterPage() {
-        PageBase.clickButton(driver.findElement(registerLink));
+        clickButton(driver.findElement(registerLink));
     }
 
     public void OpenLoginPage() {
