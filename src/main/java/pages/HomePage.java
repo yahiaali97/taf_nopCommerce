@@ -3,7 +3,6 @@ package pages;
 import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage extends PageBase {
 
@@ -11,14 +10,15 @@ public class HomePage extends PageBase {
         super(driver);
     }
 
-    WebElement registerLink = driver.findElement(By.linkText("Register"));
-    WebElement loginLink = driver.findElement(By.linkText("Log in"));
+    By registerLink = By.linkText("Register");
+
+    By loginLink = By.linkText("Log in");
 
     public void OpenRegisterPage() {
-        PageBase.clickButton(registerLink);
+        PageBase.clickButton(driver.findElement(registerLink));
     }
 
     public void OpenLoginPage() {
-        clickButton(loginLink);
+        clickButton(driver.findElement(loginLink));
     }
 }

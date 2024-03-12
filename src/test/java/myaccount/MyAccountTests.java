@@ -45,6 +45,7 @@ public class MyAccountTests extends TestBase {
         registerObject.OpenMyAccountPage();
         myAccountPageObject.ChangePassword(oldPassword, newPassword);
     }
+
     @Test(priority = 4)
     public void UserCanLogout() {
         registerObject.usrLogout();
