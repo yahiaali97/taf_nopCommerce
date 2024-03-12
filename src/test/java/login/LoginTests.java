@@ -22,10 +22,7 @@ public class LoginTests extends TestBase {
         loginObject = new LoginPage(driver);
         loginObject.userLogin("testtest1239@example.com", "123456789");
 
-        registrationPage = new RegistrationPage(driver);
         WebElement logoutElement = driver.findElement(registrationPage.LogoutLink);
-        boolean isLogoutDisplayed = logoutElement.isDisplayed();
-        System.out.println("Is Log out Button is Displayed? "+ isLogoutDisplayed);
-        assertTrue(isLogoutDisplayed, "Logout link is displayed after login");
+        assertTrue(logoutElement.isDisplayed(), "Logout link is displayed after login");
     }
 }

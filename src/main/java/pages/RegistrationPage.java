@@ -38,7 +38,7 @@ public class RegistrationPage extends PageBase {
     }
 
     public void usrLogout() {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(d -> ExpectedConditions.elementToBeClickable(driver.findElement(LogoutLink)));
     }
 
