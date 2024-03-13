@@ -27,7 +27,7 @@ public class LoginTest extends TestBase {
         registerObject = new RegistrationPage(driver);
         registerObject.userRegistration(fName, lName, email, password);
 
-        assertTrue(driver.findElement(registerObject.resultMsg).isDisplayed(), "Successfully Registration");
+        assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
     }
 
     @Test(priority = 2)
@@ -36,6 +36,6 @@ public class LoginTest extends TestBase {
         loginObject = new LoginPage(driver);
         loginObject.userLogin(email, password);
 
-        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed(), "Logout link is displayed after login");
+        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
 }

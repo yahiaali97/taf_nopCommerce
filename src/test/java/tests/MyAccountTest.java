@@ -29,7 +29,7 @@ public class MyAccountTest extends TestBase {
         registerObject = new RegistrationPage(driver);
         registerObject.userRegistration(fName, lName, email, oldPassword);
 
-        assertTrue(driver.findElement(registerObject.resultMsg).isDisplayed(), "Successfully Registration");
+        assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
     }
 
     @Test(priority = 2)
@@ -38,7 +38,7 @@ public class MyAccountTest extends TestBase {
         loginObject = new LoginPage(driver);
         loginObject.userLogin(email, oldPassword);
 
-        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed(), "Logout link is displayed after login");
+        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
 
     @Test(priority = 3)
@@ -48,7 +48,7 @@ public class MyAccountTest extends TestBase {
         myAccountPageObject.openChangePWPage();
         myAccountPageObject.ChangePassword(oldPassword, newPassword);
 
-        assertTrue(driver.findElement(myAccountPageObject.changePWLink).isDisplayed(), "Change Password link is displayed after login");
+        assertTrue(driver.findElement(myAccountPageObject.changePWLink).isDisplayed());
     }
 
     @Test(priority = 4)
