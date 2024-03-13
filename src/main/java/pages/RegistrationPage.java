@@ -17,6 +17,7 @@ public class RegistrationPage extends PageBase {
     By pwBox = By.id("Password");
     By confirmPWBox = By.id("ConfirmPassword");
     By registerBtn = By.id("register-button");
+    public By resultMsg = By.cssSelector("div.result");
     public By logoutLink = By.xpath("//a[@class='ico-logout']");
 
     public RegistrationPage(WebDriver driver) {

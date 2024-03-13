@@ -1,7 +1,6 @@
 package tests;
 
 import base.TestBase;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -28,8 +27,7 @@ public class LoginTest extends TestBase {
         registerObject = new RegistrationPage(driver);
         registerObject.userRegistration(fName, lName, email, password);
 
-        WebElement SuccessMsg = driver.findElement(By.cssSelector("div.result"));
-        assertTrue(SuccessMsg.isDisplayed(), "Successfully Registration");
+        assertTrue(driver.findElement(registerObject.resultMsg).isDisplayed(), "Successfully Registration");
     }
 
     @Test(priority = 2)
