@@ -18,15 +18,16 @@ public class MyAccountTest extends TestBase {
     MyAccountPage myAccountPageObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test69@example.com";
+    String email = "test74@example.com";
     String oldPassword = "123456";
     String newPassword = "123456789";
 
     @Test(priority = 1)
     public void UserRegisterSuccessfully() {
         homeObject = new HomePage(driver);
-        homeObject.OpenRegisterPage();
         registerObject = new RegistrationPage(driver);
+
+        homeObject.OpenRegisterPage();
         registerObject.userRegistration(fName, lName, email, oldPassword);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
@@ -34,8 +35,9 @@ public class MyAccountTest extends TestBase {
 
     @Test(priority = 2)
     public void RegisteredUserCanLogin() {
-        homeObject.OpenLoginPage();
         loginObject = new LoginPage(driver);
+
+        homeObject.OpenLoginPage();
         loginObject.userLogin(email, oldPassword);
 
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
@@ -44,6 +46,7 @@ public class MyAccountTest extends TestBase {
     @Test(priority = 3)
     public void RegisteredUserCanChangePassword() {
         myAccountPageObject = new MyAccountPage(driver);
+
         myAccountPageObject.OpenMyAccountPage();
         myAccountPageObject.openChangePWPage();
         myAccountPageObject.ChangePassword(oldPassword, newPassword);

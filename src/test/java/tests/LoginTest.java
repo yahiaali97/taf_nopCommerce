@@ -22,8 +22,9 @@ public class LoginTest extends TestBase {
     @Test(priority = 1)
     public void userRegistration() {
         homeObject = new HomePage(driver);
-        homeObject.OpenRegisterPage();
         registerObject = new RegistrationPage(driver);
+
+        homeObject.OpenRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
@@ -31,8 +32,9 @@ public class LoginTest extends TestBase {
 
     @Test(priority = 2)
     public void userLogin() {
-        homeObject.OpenLoginPage();
         loginObject = new LoginPage(driver);
+
+        homeObject.OpenLoginPage();
         loginObject.userLogin(email, password);
 
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());

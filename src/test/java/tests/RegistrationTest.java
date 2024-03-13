@@ -12,14 +12,15 @@ public class RegistrationTest extends TestBase {
     RegistrationPage registerObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test60@example.com";
+    String email = "test75@example.com";
     String password = "123456";
 
     @Test
     public void userRegistration() {
         homeObject = new HomePage(driver);
-        homeObject.OpenRegisterPage();
         registerObject = new RegistrationPage(driver);
+
+        homeObject.OpenRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
