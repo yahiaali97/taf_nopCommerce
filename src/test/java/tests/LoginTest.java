@@ -1,7 +1,6 @@
 package tests;
 
 import base.TestBase;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -16,7 +15,7 @@ public class LoginTest extends TestBase {
     LoginPage loginObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test51@example.com";
+    String email = "test71@example.com";
     String password = "123456";
 
 
