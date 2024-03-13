@@ -16,8 +16,8 @@ public class MyAccountTest extends TestBase {
     RegistrationPage registerObject;
     LoginPage loginObject;
     MyAccountPage myAccountPageObject;
-    String fName = "Yahya";
-    String lName = "Ali";
+    String fName = "Robert";
+    String lName = "John";
     String email = "test69@example.com";
     String oldPassword = "123456";
     String newPassword = "123456789";
@@ -38,8 +38,7 @@ public class MyAccountTest extends TestBase {
         loginObject = new LoginPage(driver);
         loginObject.userLogin(email, oldPassword);
 
-        WebElement logoutElement = driver.findElement(registerObject.logoutLink);
-        assertTrue(logoutElement.isDisplayed(), "Logout link is displayed after login");
+        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed(), "Logout link is displayed after login");
     }
 
     @Test(priority = 3)
@@ -49,8 +48,7 @@ public class MyAccountTest extends TestBase {
         myAccountPageObject.openChangePWPage();
         myAccountPageObject.ChangePassword(oldPassword, newPassword);
 
-        WebElement changePasswordElement = driver.findElement(myAccountPageObject.changePWLink);
-        assertTrue(changePasswordElement.isDisplayed(), "Change Password link is displayed after login");
+        assertTrue(driver.findElement(myAccountPageObject.changePWLink).isDisplayed(), "Change Password link is displayed after login");
     }
 
     @Test(priority = 4)

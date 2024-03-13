@@ -14,8 +14,8 @@ public class LoginTest extends TestBase {
     HomePage homeObject;
     RegistrationPage registerObject;
     LoginPage loginObject;
-    String fName = "Yahya";
-    String lName = "Ali";
+    String fName = "Robert";
+    String lName = "John";
     String email = "test51@example.com";
     String password = "123456";
 
@@ -36,7 +36,6 @@ public class LoginTest extends TestBase {
         loginObject = new LoginPage(driver);
         loginObject.userLogin(email, password);
 
-        WebElement logoutElement = driver.findElement(registerObject.logoutLink);
-        assertTrue(logoutElement.isDisplayed(), "Logout link is displayed after login");
+        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed(), "Logout link is displayed after login");
     }
 }
