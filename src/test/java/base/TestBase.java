@@ -1,6 +1,7 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -11,12 +12,12 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() {
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.navigate().to("https://demo.nopcommerce.com");
     }
 
-    @AfterClass(enabled = false)
+    @AfterClass(enabled = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();

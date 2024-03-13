@@ -18,7 +18,6 @@ public class HomePage extends PageBase {
         super(driver);
     }
 
-
     public void OpenLoginPage() {
         clickButton(driver.findElement(loginLink));
     }
