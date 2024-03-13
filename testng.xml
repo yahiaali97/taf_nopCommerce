@@ -3,9 +3,9 @@
 <suite name="All Test Suite">
     <test name="Regression Suite">
         <classes>
-            <class name="register.RegistrationTests"/>
-            <class name="login.LoginTests"/>
-            <class name="myaccount.MyAccountTests"/>
+            <class name="tests.RegistrationTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.MyAccountTest"/>
         </classes>
     </test>
 </suite>

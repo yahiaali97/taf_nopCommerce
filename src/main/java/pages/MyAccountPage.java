@@ -5,23 +5,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MyAccountPage extends PageBase {
-    public By changePassword = By.xpath("//a[@href=\"/customer/changepassword\"]");
-    By oldPassword = By.id("OldPassword");
-    By newPassword = By.id("NewPassword");
-    By confirmNewPassword = By.id("ConfirmNewPassword");
-    By submitChangePasswordBtn = By.xpath("//button[@class='button-1 change-password-button']");
-    By closeConfirmationMsg = By.xpath("//span[@class='close']");
+    public By myAccountLink = By.linkText("My account");
+    public By changePWLink = By.xpath("//a[@href=\"/customer/changepassword\"]");
+    By oldPW = By.id("OldPassword");
+    By newPW = By.id("NewPassword");
+    By confirmNewPW = By.id("ConfirmNewPassword");
+    By changePWBtn = By.xpath("//button[@class='button-1 change-password-button']");
+    By confirmLbl = By.xpath("//span[@class='close']");
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
 
+    public void OpenMyAccountPage() {
+        clickButton(driver.findElement(myAccountLink));
+    }
+
+    public void openChangePWPage() {
+        clickButton(driver.findElement(changePWLink));
+    }
+
     public void ChangePassword(String oldPass, String newPass) {
-        clickButton(driver.findElement(changePassword));
-        setTextElement(driver.findElement(oldPassword), oldPass);
-        setTextElement(driver.findElement(newPassword), newPass);
-        setTextElement(driver.findElement(confirmNewPassword), newPass);
-        clickButton(driver.findElement(submitChangePasswordBtn));
-        clickButton(driver.findElement(closeConfirmationMsg));
+        setTextElement(driver.findElement(oldPW), oldPass);
+        setTextElement(driver.findElement(newPW), newPass);
+        setTextElement(driver.findElement(confirmNewPW), newPass);
+        clickButton(driver.findElement(changePWBtn));
+        clickButton(driver.findElement(confirmLbl));
     }
 }

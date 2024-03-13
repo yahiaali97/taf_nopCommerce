@@ -1,4 +1,4 @@
-package register;
+package tests;
 
 import base.TestBase;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import pages.RegistrationPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class RegistrationTests extends TestBase {
+public class RegistrationTest extends TestBase {
     HomePage homeObject;
     RegistrationPage registerObject;
 
@@ -19,12 +19,9 @@ public class RegistrationTests extends TestBase {
         homeObject.OpenRegisterPage();
 
         registerObject = new RegistrationPage(driver);
-        registerObject.RegisterNewUser("Yahya",
-                                        "Ali",
-                                        "yahyaalii@example.com",
-                                        "123456");
+        registerObject.userRegistration("Yahya", "Ali", "test60@example.com", "123456");
 
-            WebElement SuccessMsg = driver.findElement(By.cssSelector("div.result"));
-            assertTrue(SuccessMsg.isDisplayed(), "Successfully Registration");
+        WebElement SuccessMsg = driver.findElement(By.cssSelector("div.result"));
+        assertTrue(SuccessMsg.isDisplayed(), "Successfully Registration");
     }
 }

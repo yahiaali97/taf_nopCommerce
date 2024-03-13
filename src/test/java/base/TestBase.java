@@ -41,7 +41,7 @@ public class TestBase {
         try {
             TakesScreenshot camera = (TakesScreenshot) driver;
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            Files.move(screenshot.toPath(), new File("reports/screenshots/" + testName + ".png").toPath());
+            Files.move(screenshot.toPath(), new File("/Screenshots" + testName + ".png").toPath());
         } catch (IOException e) {
             e.printStackTrace();
         }

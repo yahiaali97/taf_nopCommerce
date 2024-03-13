@@ -10,39 +10,31 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class RegistrationPage extends PageBase {
-    By GenderRdoBtn = By.id("gender-male");
-    By FirstName = By.id("FirstName");
-    By LastName = By.id("LastName");
-    By Email = By.id("Email");
-    By Password = By.id("Password");
-    By ConfirmPass = By.id("ConfirmPassword");
-    By RegisterSubmit = By.id("register-button");
-    public By LogoutLink = By.xpath("//a[@class='ico-logout']");
-    By myAccountLink = By.linkText("My account");
+    By genderSelect = By.id("gender-male");
+    By fnBox = By.id("FirstName");
+    By lnBox = By.id("LastName");
+    By emailBox = By.id("Email");
+    By pwBox = By.id("Password");
+    By confirmPWBox = By.id("ConfirmPassword");
+    By registerBtn = By.id("register-button");
+    public By logoutLink = By.xpath("//a[@class='ico-logout']");
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
 
-    public void RegisterNewUser(String firstName,
-                                String lastName,
-                                String emailAddress,
-                                String pass) {
-        clickButton(driver.findElement(GenderRdoBtn));
-        setTextElement(driver.findElement(FirstName), firstName);
-        setTextElement(driver.findElement(LastName), lastName);
-        setTextElement(driver.findElement(Email), emailAddress);
-        setTextElement(driver.findElement(Password), pass);
-        setTextElement(driver.findElement(ConfirmPass), pass);
-        clickButton(driver.findElement(RegisterSubmit));
+    public void userRegistration(String firstName, String lastName, String emailAddress, String pass) {
+        clickButton(driver.findElement(genderSelect));
+        setTextElement(driver.findElement(fnBox), firstName);
+        setTextElement(driver.findElement(lnBox), lastName);
+        setTextElement(driver.findElement(emailBox), emailAddress);
+        setTextElement(driver.findElement(pwBox), pass);
+        setTextElement(driver.findElement(confirmPWBox), pass);
+        clickButton(driver.findElement(registerBtn));
     }
 
     public void usrLogout() {
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(d -> ExpectedConditions.elementToBeClickable(driver.findElement(LogoutLink)));
-    }
-
-    public void OpenMyAccountPage() {
-        clickButton(driver.findElement(myAccountLink));
+        wait.until(d -> ExpectedConditions.elementToBeClickable(driver.findElement(logoutLink)));
     }
 }
