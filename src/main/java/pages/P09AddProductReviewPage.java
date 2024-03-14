@@ -5,10 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P09AddProductReviewPage extends PageBase {
+    
     public P09AddProductReviewPage(WebDriver driver) {
         super(driver);
     }
-    
+
     By addReviewLink = By.linkText("Add your review");
     By reviewTitle = By.id("AddProductReview_Title");
     By reviewText = By.id("AddProductReview_ReviewText");

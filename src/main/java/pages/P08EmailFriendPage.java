@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P08EmailFriendPage extends PageBase {
+
     public P08EmailFriendPage(WebDriver driver) {
         super(driver);
     }

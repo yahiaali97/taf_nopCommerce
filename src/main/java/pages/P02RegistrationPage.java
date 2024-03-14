@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class P02RegistrationPage extends PageBase {
+
     public P02RegistrationPage(WebDriver driver) {
         super(driver);
     }

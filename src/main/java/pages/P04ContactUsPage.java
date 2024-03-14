@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P04ContactUsPage extends PageBase {
+
     public P04ContactUsPage(WebDriver driver) {
         super(driver);
     }

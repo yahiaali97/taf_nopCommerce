@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class P06SearchPage extends PageBase {
+
     public P06SearchPage(WebDriver driver) {
         super(driver);
     }

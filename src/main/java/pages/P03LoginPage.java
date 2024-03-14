@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P03LoginPage extends PageBase {
+
     public P03LoginPage(WebDriver driver) {
         super(driver);
     }

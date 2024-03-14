@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P05MyAccountPage extends PageBase {
+
     public P05MyAccountPage(WebDriver driver) {
         super(driver);
     }
