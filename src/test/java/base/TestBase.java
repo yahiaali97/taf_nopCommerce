@@ -18,7 +18,7 @@ public class TestBase {
         driver.navigate().to("https://demo.nopcommerce.com");
     }
 
-    @AfterClass(enabled = true)
+    @AfterClass(enabled = false)
     public void tearDown() {
         if (driver != null) {
             driver.quit();

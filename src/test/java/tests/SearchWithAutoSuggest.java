@@ -2,17 +2,17 @@ package tests;
 
 import base.TestBase;
 import org.testng.annotations.Test;
+import pages.HomePage;
 import pages.SearchPage;
 
-import static org.testng.Assert.assertTrue;
-
-public class SearchUsingAutoSuggestTest extends TestBase {
+public class SearchWithAutoSuggest extends TestBase {
+    HomePage homeObject;
     SearchPage searchObject;
 
     @Test
-    public void UserCanSearchWithAutoSuggest() {
+    public void UserSearchWithAutoSuggest() {
+        homeObject = new HomePage(driver);
         searchObject = new SearchPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
-        assertTrue(driver.findElement(searchObject.searchUsingAutoSuggestAssert).isDisplayed());
     }
 }

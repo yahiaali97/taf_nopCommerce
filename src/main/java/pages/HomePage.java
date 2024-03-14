@@ -20,7 +20,6 @@ public class HomePage extends PageBase {
         clickButton(driver.findElement(registerLink));
     }
 
-
     public void openLoginPage() {
         clickButton(driver.findElement(loginLink));
     }

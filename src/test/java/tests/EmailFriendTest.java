@@ -2,23 +2,20 @@ package tests;
 
 import base.TestBase;
 import org.testng.annotations.Test;
-import pages.EmailFriendPage;
-import pages.HomePage;
-import pages.RegistrationPage;
-import pages.SearchPage;
+import pages.*;
 
 import static org.testng.Assert.assertTrue;
 
 public class EmailFriendTest extends TestBase {
     HomePage homeObject;
     RegistrationPage registerObject;
+    LoginPage loginObject;
     SearchPage searchObject;
     EmailFriendPage emailFriendObject;
 
     String fName = "Robert";
     String lName = "John";
-    String email = "test77@example.com";
-    String yourEmail = "john@example.com";
+    String email = "test83@example.com";
     String personalMsg = "This product is very good for you";
     String password = "123456";
 
@@ -33,7 +30,6 @@ public class EmailFriendTest extends TestBase {
                 .contains("Your registration completed"));
     }
 
-
     @Test(priority = 2)
     public void UserCanSearchWithAutoSuggest() {
         searchObject = new SearchPage(driver);
@@ -41,8 +37,19 @@ public class EmailFriendTest extends TestBase {
     }
 
     @Test(priority = 3)
+    public void userLogin() {
+        loginObject = new LoginPage(driver);
+        homeObject.openLoginPage();
+        loginObject.userLogin(email, password);
+        assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
+    }
+
+    @Test(priority = 4)
     public void emailFriend() {
         emailFriendObject = new EmailFriendPage(driver);
-        emailFriendObject.sendEmailToFriend(email,yourEmail,personalMsg);
+        emailFriendObject.sendEmailToFriend(email, personalMsg);
+        assertTrue(driver.findElement(emailFriendObject.ConfirmationMsg)
+                .getText()
+                .contains("Your message has been sent"));
     }
 }

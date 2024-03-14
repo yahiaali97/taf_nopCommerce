@@ -11,9 +11,7 @@ public class SearchPage extends PageBase {
     By searchTxtBox = By.id("small-searchterms");
     By searchBtn = By.xpath("//button[@class='button-1 search-box-button']");
     public By searchAssert = By.cssSelector("h1.product-name");
-    public By searchUsingAutoSuggestAssert = By.id("btnAddToWishlistAssert");
     public List<WebElement> optionElements = driver.findElements(By.id("ui-id-1"));
-
 
     public SearchPage(WebDriver driver) {
         super(driver);
