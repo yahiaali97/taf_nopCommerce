@@ -25,31 +25,27 @@ public class MyAccountTest extends TestBase {
     public void UserRegisterSuccessfully() {
         homeObject = new HomePage(driver);
         registerObject = new RegistrationPage(driver);
-
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, oldPassword);
-
-        assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
+        assertTrue(driver.findElement(registerObject.resultMsg)
+                .getText()
+                .contains("Your registration completed"));
     }
 
     @Test(priority = 2)
     public void RegisteredUserCanLogin() {
         loginObject = new LoginPage(driver);
-
         homeObject.openLoginPage();
         loginObject.userLogin(email, oldPassword);
-
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
 
     @Test(priority = 3)
     public void RegisteredUserCanChangePassword() {
         myAccountPageObject = new MyAccountPage(driver);
-
         myAccountPageObject.OpenMyAccountPage();
         myAccountPageObject.openChangePWPage();
         myAccountPageObject.ChangePassword(oldPassword, newPassword);
-
         assertTrue(driver.findElement(myAccountPageObject.changePWLink).isDisplayed());
     }
 

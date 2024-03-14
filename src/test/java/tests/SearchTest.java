@@ -14,9 +14,7 @@ public class SearchTest extends TestBase {
     @Test
     public void userCanSearchForProduct() {
         searchObject = new SearchPage(driver);
-
         searchObject.productSearch(productName);
-
-        assertTrue(driver.findElement(searchObject.productTitle).isDisplayed());
+        assertTrue(driver.findElement(searchObject.searchAssert).isDisplayed());
     }
 }

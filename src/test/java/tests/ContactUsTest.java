@@ -19,10 +19,8 @@ public class ContactUsTest extends TestBase {
     public void OpenContactUsPage() {
         homeObject = new HomePage(driver);
         contactUsObject = new ContactUsPage(driver);
-
         homeObject.openContactPage();
         contactUsObject.fillContactUsForm(name, email, inquiry);
-
         assertTrue(driver.findElement(contactUsObject.submitMsg).getText()
                 .contains("Your enquiry has been successfully sent"));
     }

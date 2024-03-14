@@ -23,20 +23,17 @@ public class LoginTest extends TestBase {
     public void userRegistration() {
         homeObject = new HomePage(driver);
         registerObject = new RegistrationPage(driver);
-
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
-
-        assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
+        assertTrue(driver.findElement(registerObject.resultMsg).getText()
+                .contains("Your registration completed"));
     }
 
     @Test(priority = 2)
     public void userLogin() {
         loginObject = new LoginPage(driver);
-
         homeObject.openLoginPage();
         loginObject.userLogin(email, password);
-
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
 }
