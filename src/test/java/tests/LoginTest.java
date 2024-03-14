@@ -18,14 +18,14 @@ public class LoginTest extends TestBase {
     String email = "test71@example.com";
     String password = "123456";
 
-
     @Test(priority = 1)
     public void userRegistration() {
         homeObject = new HomePage(driver);
         registerObject = new RegistrationPage(driver);
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
-        assertTrue(driver.findElement(registerObject.resultMsg).getText()
+        assertTrue(driver.findElement(registerObject.resultMsg)
+                .getText()
                 .contains("Your registration completed"));
     }
 

@@ -15,7 +15,7 @@ public class EmailFriendTest extends TestBase {
 
     String fName = "Robert";
     String lName = "John";
-    String email = "test83@example.com";
+    String email = "test84@example.com";
     String personalMsg = "This product is very good for you";
     String password = "123456";
 

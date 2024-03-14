@@ -25,7 +25,7 @@ public class SearchPage extends PageBase {
     public void ProductSearchUsingAutoSuggest(String searchTxt) {
         setTextElement(driver.findElement(searchTxtBox), searchTxt);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

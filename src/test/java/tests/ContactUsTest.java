@@ -14,7 +14,6 @@ public class ContactUsTest extends TestBase {
     String email = "jaden@example.com";
     String inquiry = "I can't add items to the cart";
 
-
     @Test
     public void OpenContactUsPage() {
         homeObject = new HomePage(driver);
