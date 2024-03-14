@@ -6,7 +6,7 @@ import pages.SearchPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class SearchProductTest extends TestBase {
+public class SearchTest extends TestBase {
 
     SearchPage searchObject;
     String productName = "Apple MacBook Pro 13-inch";

@@ -1,7 +1,6 @@
 package tests;
 
 import base.TestBase;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -27,7 +26,7 @@ public class MyAccountTest extends TestBase {
         homeObject = new HomePage(driver);
         registerObject = new RegistrationPage(driver);
 
-        homeObject.OpenRegisterPage();
+        homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, oldPassword);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
@@ -37,7 +36,7 @@ public class MyAccountTest extends TestBase {
     public void RegisteredUserCanLogin() {
         loginObject = new LoginPage(driver);
 
-        homeObject.OpenLoginPage();
+        homeObject.openLoginPage();
         loginObject.userLogin(email, oldPassword);
 
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());

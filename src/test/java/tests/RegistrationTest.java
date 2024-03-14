@@ -20,7 +20,7 @@ public class RegistrationTest extends TestBase {
         homeObject = new HomePage(driver);
         registerObject = new RegistrationPage(driver);
 
-        homeObject.OpenRegisterPage();
+        homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText().contains("Your registration completed"));
