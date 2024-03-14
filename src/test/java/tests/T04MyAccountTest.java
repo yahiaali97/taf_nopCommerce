@@ -17,7 +17,7 @@ public class T04MyAccountTest extends TestBase {
     P05MyAccountPage p05MyAccountPageObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test74@example.com";
+    String email = "test86@example.com";
     String oldPassword = "123456";
     String newPassword = "123456789";
 
