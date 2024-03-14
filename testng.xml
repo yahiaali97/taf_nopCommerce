@@ -3,10 +3,10 @@
 <suite name="All Test Suite">
     <test name="Regression Suite">
         <classes>
-            <class name="tests.RegistrationTest"/>
-            <class name="tests.LoginTest"/>
-            <class name="tests.MyAccountTest"/>
-            <class name="tests.SearchTest"></class>
+            <class name="tests.T01RegistrationTest"/>
+            <class name="tests.T02LoginTest"/>
+            <class name="tests.T04MyAccountTest"/>
+            <class name="tests.T05SearchTest"></class>
         </classes>
     </test>
 </suite>

@@ -4,14 +4,14 @@ import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class EmailFriendPage extends PageBase {
+public class P08EmailFriendPage extends PageBase {
     By emailFriendBtn = By.cssSelector("div.email-a-friend");
     By emailFriendTxt = By.id("FriendEmail");
     By personalMsgTxt = By.id("PersonalMessage");
     By submitSentBtn = By.xpath("//button[@name=\"send-email\"]");
     public By ConfirmationMsg = By.cssSelector("div.result");
 
-    public EmailFriendPage(WebDriver driver) {
+    public P08EmailFriendPage(WebDriver driver) {
         super(driver);
     }
 

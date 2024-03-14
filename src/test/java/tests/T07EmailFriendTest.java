@@ -6,12 +6,12 @@ import pages.*;
 
 import static org.testng.Assert.assertTrue;
 
-public class EmailFriendTest extends TestBase {
-    HomePage homeObject;
-    RegistrationPage registerObject;
-    LoginPage loginObject;
-    SearchPage searchObject;
-    EmailFriendPage emailFriendObject;
+public class T07EmailFriendTest extends TestBase {
+    P01HomePage homeObject;
+    P02RegistrationPage registerObject;
+    P03LoginPage loginObject;
+    P06SearchPage searchObject;
+    P08EmailFriendPage emailFriendObject;
 
     String fName = "Robert";
     String lName = "John";
@@ -21,8 +21,8 @@ public class EmailFriendTest extends TestBase {
 
     @Test(priority = 1)
     public void userRegistration() {
-        homeObject = new HomePage(driver);
-        registerObject = new RegistrationPage(driver);
+        homeObject = new P01HomePage(driver);
+        registerObject = new P02RegistrationPage(driver);
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
         assertTrue(driver.findElement(registerObject.resultMsg)
@@ -32,13 +32,13 @@ public class EmailFriendTest extends TestBase {
 
     @Test(priority = 2)
     public void UserCanSearchWithAutoSuggest() {
-        searchObject = new SearchPage(driver);
+        searchObject = new P06SearchPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
     }
 
     @Test(priority = 3)
     public void userLogin() {
-        loginObject = new LoginPage(driver);
+        loginObject = new P03LoginPage(driver);
         homeObject.openLoginPage();
         loginObject.userLogin(email, password);
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
@@ -46,7 +46,7 @@ public class EmailFriendTest extends TestBase {
 
     @Test(priority = 4)
     public void emailFriend() {
-        emailFriendObject = new EmailFriendPage(driver);
+        emailFriendObject = new P08EmailFriendPage(driver);
         emailFriendObject.sendEmailToFriend(email, personalMsg);
         assertTrue(driver.findElement(emailFriendObject.ConfirmationMsg)
                 .getText()

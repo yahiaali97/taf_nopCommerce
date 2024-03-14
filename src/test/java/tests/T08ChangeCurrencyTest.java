@@ -6,29 +6,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.ProductDetailsPage;
-import pages.SearchPage;
+import pages.P01HomePage;
+import pages.P07ProductDetailsPage;
+import pages.P06SearchPage;
 
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
-public class ChangeCurrencyTest extends TestBase {
-    HomePage homeObject;
-    SearchPage searchObject;
-    ProductDetailsPage detailsObject;
+public class T08ChangeCurrencyTest extends TestBase {
+    P01HomePage homeObject;
+    P06SearchPage searchObject;
+    P07ProductDetailsPage detailsObject;
 
     @Test(priority = 1)
     public void userCanChangeCurrency() {
-        homeObject = new HomePage(driver);
+        homeObject = new P01HomePage(driver);
         homeObject.changeCurrency();
     }
 
     @Test(priority = 2)
     public void UserCanSearchWithAutoSuggest() {
-        searchObject = new SearchPage(driver);
-        detailsObject = new ProductDetailsPage(driver);
+        searchObject = new P06SearchPage(driver);
+        detailsObject = new P07ProductDetailsPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
 
         Wait<WebDriver> wait =

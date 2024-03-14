@@ -2,19 +2,19 @@ package tests;
 
 import base.TestBase;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.MyAccountPage;
-import pages.RegistrationPage;
+import pages.P01HomePage;
+import pages.P03LoginPage;
+import pages.P05MyAccountPage;
+import pages.P02RegistrationPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class MyAccountTest extends TestBase {
+public class T04MyAccountTest extends TestBase {
 
-    HomePage homeObject;
-    RegistrationPage registerObject;
-    LoginPage loginObject;
-    MyAccountPage myAccountPageObject;
+    P01HomePage homeObject;
+    P02RegistrationPage registerObject;
+    P03LoginPage loginObject;
+    P05MyAccountPage p05MyAccountPageObject;
     String fName = "Robert";
     String lName = "John";
     String email = "test74@example.com";
@@ -23,8 +23,8 @@ public class MyAccountTest extends TestBase {
 
     @Test(priority = 1)
     public void UserRegisterSuccessfully() {
-        homeObject = new HomePage(driver);
-        registerObject = new RegistrationPage(driver);
+        homeObject = new P01HomePage(driver);
+        registerObject = new P02RegistrationPage(driver);
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, oldPassword);
         assertTrue(driver.findElement(registerObject.resultMsg)
@@ -34,7 +34,7 @@ public class MyAccountTest extends TestBase {
 
     @Test(priority = 2)
     public void RegisteredUserCanLogin() {
-        loginObject = new LoginPage(driver);
+        loginObject = new P03LoginPage(driver);
         homeObject.openLoginPage();
         loginObject.userLogin(email, oldPassword);
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
@@ -42,11 +42,11 @@ public class MyAccountTest extends TestBase {
 
     @Test(priority = 3)
     public void RegisteredUserCanChangePassword() {
-        myAccountPageObject = new MyAccountPage(driver);
-        myAccountPageObject.OpenMyAccountPage();
-        myAccountPageObject.openChangePWPage();
-        myAccountPageObject.ChangePassword(oldPassword, newPassword);
-        assertTrue(driver.findElement(myAccountPageObject.changePWLink).isDisplayed());
+        p05MyAccountPageObject = new P05MyAccountPage(driver);
+        p05MyAccountPageObject.OpenMyAccountPage();
+        p05MyAccountPageObject.openChangePWPage();
+        p05MyAccountPageObject.ChangePassword(oldPassword, newPassword);
+        assertTrue(driver.findElement(p05MyAccountPageObject.changePWLink).isDisplayed());
     }
 
     @Test(priority = 4)

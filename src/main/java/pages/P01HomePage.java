@@ -6,14 +6,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class HomePage extends PageBase {
+public class P01HomePage extends PageBase {
     By currencyDDL = By.id("customerCurrency");
     By registerLink = By.linkText("Register");
 
     public By loginLink = By.linkText("Log in");
     By contactUsLink = By.xpath("//a[@href=\"/contactus\"]");
 
-    public HomePage(WebDriver driver) {
+    public P01HomePage(WebDriver driver) {
         super(driver);
         js = (JavascriptExecutor) driver;
     }

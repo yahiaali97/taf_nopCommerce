@@ -7,13 +7,13 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class SearchPage extends PageBase {
+public class P06SearchPage extends PageBase {
     By searchTxtBox = By.id("small-searchterms");
     By searchBtn = By.xpath("//button[@class='button-1 search-box-button']");
     public By searchAssert = By.cssSelector("h1.product-name");
     public List<WebElement> optionElements = driver.findElements(By.id("ui-id-1"));
 
-    public SearchPage(WebDriver driver) {
+    public P06SearchPage(WebDriver driver) {
         super(driver);
     }
 

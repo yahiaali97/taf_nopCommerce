@@ -4,13 +4,13 @@ import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends PageBase {
+public class P03LoginPage extends PageBase {
 
     By loginEmail = By.id("Email");
     By loginPW = By.id("Password");
     By loginBtn = By.xpath("//button[@class='button-1 login-button']");
 
-    public LoginPage(WebDriver driver) {
+    public P03LoginPage(WebDriver driver) {
         super(driver);
     }
 

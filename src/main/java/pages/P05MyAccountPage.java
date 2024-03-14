@@ -4,7 +4,7 @@ import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MyAccountPage extends PageBase {
+public class P05MyAccountPage extends PageBase {
     public By myAccountLink = By.linkText("My account");
     public By changePWLink = By.xpath("//a[@href=\"/customer/changepassword\"]");
     By oldPW = By.id("OldPassword");
@@ -13,7 +13,7 @@ public class MyAccountPage extends PageBase {
     By changePWBtn = By.xpath("//button[@class='button-1 change-password-button']");
     By confirmLbl = By.xpath("//span[@class='close']");
 
-    public MyAccountPage(WebDriver driver) {
+    public P05MyAccountPage(WebDriver driver) {
         super(driver);
     }
 
