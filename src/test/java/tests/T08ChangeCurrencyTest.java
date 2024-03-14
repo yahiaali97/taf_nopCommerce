@@ -43,8 +43,7 @@ public class T08ChangeCurrencyTest extends TestBase {
                 });
 
         System.out.println(driver.findElement(detailsObject.productPriceLbl).getText());
-        assertTrue(driver.findElement(detailsObject.productPriceLbl)
-                .getText()
+        assertTrue(driver.findElement(detailsObject.productPriceLbl).getText()
                 .contains("€"));
     }
 }

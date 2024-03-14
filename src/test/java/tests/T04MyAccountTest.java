@@ -27,8 +27,7 @@ public class T04MyAccountTest extends TestBase {
         registerObject = new P02RegistrationPage(driver);
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, oldPassword);
-        assertTrue(driver.findElement(registerObject.resultMsg)
-                .getText()
+        assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
     }
 

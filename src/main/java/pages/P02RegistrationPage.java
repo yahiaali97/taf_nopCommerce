@@ -10,6 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class P02RegistrationPage extends PageBase {
+    public P02RegistrationPage(WebDriver driver) {
+        super(driver);
+    }
+
     By genderSelect = By.id("gender-male");
     By fnBox = By.id("FirstName");
     By lnBox = By.id("LastName");
@@ -19,10 +23,6 @@ public class P02RegistrationPage extends PageBase {
     By registerBtn = By.id("register-button");
     public By resultMsg = By.cssSelector("div.result");
     public By logoutLink = By.xpath("//a[@class='ico-logout']");
-
-    public P02RegistrationPage(WebDriver driver) {
-        super(driver);
-    }
 
     public void userRegistration(String firstName, String lastName, String emailAddress, String pass) {
         clickButton(driver.findElement(genderSelect));

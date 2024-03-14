@@ -15,7 +15,7 @@ public class T02LoginTest extends TestBase {
     P03LoginPage loginObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test86@example.com";
+    String email = "test87@example.com";
     String password = "123456";
 
     @Test(priority = 1)
@@ -24,8 +24,7 @@ public class T02LoginTest extends TestBase {
         registerObject = new P02RegistrationPage(driver);
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
-        assertTrue(driver.findElement(registerObject.resultMsg)
-                .getText()
+        assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
     }
 

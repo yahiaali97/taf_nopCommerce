@@ -20,8 +20,7 @@ public class T03ContactUsTest extends TestBase {
         contactUsObject = new P04ContactUsPage(driver);
         homeObject.openContactPage();
         contactUsObject.fillContactUsForm(name, email, inquiry);
-        assertTrue(driver.findElement(contactUsObject.submitMsg)
-                .getText()
+        assertTrue(driver.findElement(contactUsObject.submitMsg).getText()
                 .contains("Your enquiry has been successfully sent"));
     }
 }

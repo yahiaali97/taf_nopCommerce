@@ -31,7 +31,7 @@ public class T07EmailFriendTest extends TestBase {
     }
 
     @Test(priority = 2)
-    public void UserCanSearchWithAutoSuggest() {
+    public void SearchWithAutoSuggest() {
         searchObject = new P06SearchPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
     }
@@ -48,8 +48,7 @@ public class T07EmailFriendTest extends TestBase {
     public void emailFriend() {
         emailFriendObject = new P08EmailFriendPage(driver);
         emailFriendObject.sendEmailToFriend(email, personalMsg);
-        assertTrue(driver.findElement(emailFriendObject.ConfirmationMsg)
-                .getText()
+        assertTrue(driver.findElement(emailFriendObject.ConfirmationMsg).getText()
                 .contains("Your message has been sent"));
     }
 }
