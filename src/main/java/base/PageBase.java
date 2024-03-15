@@ -24,4 +24,8 @@ public class PageBase {
     protected static void setTextElement(WebElement textElement, String value) {
         textElement.sendKeys(value);
     }
+
+    protected static void clearText(WebElement clearText) {
+        clearText.clear();
+    }
 }

@@ -2,18 +2,20 @@ package tests;
 
 import base.TestBase;
 import org.testng.annotations.Test;
-import pages.P01HomePage;
 import pages.P06SearchPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class T06SearchWithAutoSuggest extends TestBase {
-    P01HomePage homeObject;
+public class T06SearchWithAutoSuggestTest extends TestBase {
     P06SearchPage searchObject;
 
-    @Test
-    public void UserSearchWithAutoSuggest() {
-        homeObject = new P01HomePage(driver);
+    @Test(priority = 1)
+    public void goToHomeAgainFirst() {
+        driver.navigate().to("https://demo.nopcommerce.com/");
+    } // Auto Suggest Search doesn't work at first test
+
+    @Test(priority = 2)
+    public void UserCanSearchWithAutoSuggest() {
         searchObject = new P06SearchPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
         assertTrue(driver.findElement(searchObject.assertAutoSuggestSearch).getText()
