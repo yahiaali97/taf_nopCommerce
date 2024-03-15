@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PageBase {
 
+    public PageBase(WebDriver driver) {
+        this.driver = driver;
+    }
+
     protected WebDriver driver;
     public JavascriptExecutor js;
     public Select select;
     public Actions actions;
-
-    public PageBase(WebDriver driver) {
-        this.driver = driver;
-    }
 
     protected static void clickButton(WebElement button) {
         button.click();
