@@ -15,7 +15,7 @@ public class PageBase {
     protected WebDriver driver;
     public JavascriptExecutor js;
     public Select select;
-    public Actions actions;
+    public Actions action;
 
     protected static void clickButton(WebElement button) {
         button.click();

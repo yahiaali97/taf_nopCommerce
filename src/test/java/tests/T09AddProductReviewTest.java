@@ -14,7 +14,7 @@ public class T09AddProductReviewTest extends TestBase {
     P09AddProductReviewPage reviewObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test90@example.com";
+    String email = "test91@example.com";
     String password = "123456";
     String reviewTitle = "Recommend the product";
     String reviewTxtBox = "This product helped me so much";
@@ -44,7 +44,7 @@ public class T09AddProductReviewTest extends TestBase {
     }
 
     @Test(priority = 4)
-    public void goToReviewPage() {
+    public void AddReview() {
         reviewObject = new P09AddProductReviewPage(driver);
         reviewObject.openReviewPage();
         reviewObject.fillReviewForm(reviewTitle, reviewTxtBox);

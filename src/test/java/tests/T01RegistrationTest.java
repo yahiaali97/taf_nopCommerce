@@ -12,7 +12,7 @@ public class T01RegistrationTest extends TestBase {
     P02RegistrationPage registerObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test85@example.com";
+    String email = "test90@example.com";
     String password = "123456";
 
     @Test

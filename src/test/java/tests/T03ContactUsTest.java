@@ -2,8 +2,8 @@ package tests;
 
 import base.TestBase;
 import org.testng.annotations.Test;
-import pages.P04ContactUsPage;
 import pages.P01HomePage;
+import pages.P04ContactUsPage;
 
 import static org.testng.Assert.assertTrue;
 

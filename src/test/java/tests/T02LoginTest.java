@@ -3,8 +3,8 @@ package tests;
 import base.TestBase;
 import org.testng.annotations.Test;
 import pages.P01HomePage;
-import pages.P03LoginPage;
 import pages.P02RegistrationPage;
+import pages.P03LoginPage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,7 +15,7 @@ public class T02LoginTest extends TestBase {
     P03LoginPage loginObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test87@example.com";
+    String email = "test91@example.com";
     String password = "123456";
 
     @Test(priority = 1)

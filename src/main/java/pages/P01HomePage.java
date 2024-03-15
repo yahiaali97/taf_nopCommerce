@@ -4,7 +4,6 @@ import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -13,7 +12,7 @@ public class P01HomePage extends PageBase {
     public P01HomePage(WebDriver driver) {
         super(driver);
         js = (JavascriptExecutor) driver;
-        actions = new Actions(driver);
+        action = new Actions(driver);
     }
 
     By currencyDDL = By.id("customerCurrency");
@@ -43,15 +42,7 @@ public class P01HomePage extends PageBase {
     }
 
     public void selectNotebooksMenu() {
-        WebElement computerMenuElement = driver.findElement(computerMenu);
-        WebElement notebooksMenuElement = driver.findElement(notebooksMenu);
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(computerMenuElement)
-                .moveToElement(notebooksMenuElement)
-                .click(notebooksMenuElement)  // Ensure click happens on target element
-                .build()
-                .perform();
+        action.moveToElement(driver.findElement(computerMenu)).perform();
+        action.click(driver.findElement(notebooksMenu)).perform();
     }
-
 }

@@ -15,7 +15,7 @@ public class T07EmailFriendTest extends TestBase {
 
     String fName = "Robert";
     String lName = "John";
-    String email = "test87@example.com";
+    String email = "test90@example.com";
     String personalMsg = "This product is very good for you";
     String password = "123456";
 
@@ -34,6 +34,8 @@ public class T07EmailFriendTest extends TestBase {
     public void SearchWithAutoSuggest() {
         searchObject = new P06SearchPage(driver);
         searchObject.ProductSearchUsingAutoSuggest("mac");
+        assertTrue(driver.findElement(searchObject.assertAutoSuggestSearch).getText()
+                .contains("Apple MacBook Pro"));
     }
 
     @Test(priority = 3)

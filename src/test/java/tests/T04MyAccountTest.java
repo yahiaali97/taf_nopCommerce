@@ -3,9 +3,9 @@ package tests;
 import base.TestBase;
 import org.testng.annotations.Test;
 import pages.P01HomePage;
+import pages.P02RegistrationPage;
 import pages.P03LoginPage;
 import pages.P05MyAccountPage;
-import pages.P02RegistrationPage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -17,7 +17,7 @@ public class T04MyAccountTest extends TestBase {
     P05MyAccountPage p05MyAccountPageObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test86@example.com";
+    String email = "test100@example.com";
     String oldPassword = "123456";
     String newPassword = "123456789";
 
@@ -51,5 +51,6 @@ public class T04MyAccountTest extends TestBase {
     @Test(priority = 4)
     public void UserCanLogout() {
         registerObject.usrLogout();
+        assertTrue(driver.findElement(homeObject.loginLink).isDisplayed());
     }
 }

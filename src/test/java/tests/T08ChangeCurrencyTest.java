@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Test;
 import pages.P01HomePage;
-import pages.P07ProductDetailsPage;
 import pages.P06SearchPage;
+import pages.P07ProductDetailsPage;
 
 import java.time.Duration;
 
