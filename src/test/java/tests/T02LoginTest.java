@@ -22,8 +22,10 @@ public class T02LoginTest extends TestBase {
     public void userRegistration() {
         homeObject = new P01HomePage(driver);
         registerObject = new P02RegistrationPage(driver);
+
         homeObject.openRegisterPage();
         registerObject.userRegistration(fName, lName, email, password);
+
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
     }
@@ -31,8 +33,10 @@ public class T02LoginTest extends TestBase {
     @Test(priority = 2)
     public void userLogin() {
         loginObject = new P03LoginPage(driver);
+
         homeObject.openLoginPage();
         loginObject.userLogin(email, password);
+
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
 }

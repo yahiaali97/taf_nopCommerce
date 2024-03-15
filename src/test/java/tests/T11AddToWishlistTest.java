@@ -20,7 +20,9 @@ public class T11AddToWishlistTest extends TestBase {
     @Test(priority = 2)
     public void UserSearchWithAutoSuggest() {
         searchObject = new P06SearchPage(driver);
+
         searchObject.ProductSearchUsingAutoSuggest("apple mac");
+
         assertTrue(driver.findElement(searchObject.assertAutoSuggestSearch).getText()
                 .contains("Apple MacBook Pro"));
     }
@@ -28,7 +30,9 @@ public class T11AddToWishlistTest extends TestBase {
     @Test(priority = 3)
     public void userCanAddProductToWishlist() {
         wishlistObject = new P10WishlistPage(driver);
+
         wishlistObject.AddProductToWishlist();
+
         driver.navigate().to("http://demo.nopcommerce.com" + "/wishlist");
         assertTrue(driver.findElement(wishlistObject.wishlistHeader).isDisplayed());
         assertTrue(driver.findElement(wishlistObject.productCell).getText()
@@ -44,6 +48,7 @@ public class T11AddToWishlistTest extends TestBase {
     @Test(priority = 5)
     public void userCanRemoveProductFromWishlist() {
         wishlistObject.removeProductFromWishlist();
+
         assertTrue(driver.findElement(wishlistObject.emptyCartLbl).getText()
                 .contains("The wishlist is empty"));
     }

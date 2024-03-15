@@ -22,6 +22,7 @@ public class T08ChangeCurrencyTest extends TestBase {
     @Test(priority = 1)
     public void userCanChangeCurrency() {
         homeObject = new P01HomePage(driver);
+
         homeObject.changeCurrency();
     }
 
@@ -29,6 +30,7 @@ public class T08ChangeCurrencyTest extends TestBase {
     public void UserCanSearchWithAutoSuggest() {
         searchObject = new P06SearchPage(driver);
         detailsObject = new P07ProductDetailsPage(driver);
+
         searchObject.ProductSearchUsingAutoSuggest("mac");
 
         Wait<WebDriver> wait =

@@ -12,7 +12,9 @@ public class T10ProductHoverMenuTest extends TestBase {
     @Test
     public void userCanChooseProductUsingHoverMenu() {
         homeObject = new P01HomePage(driver);
+
         homeObject.selectNotebooksMenu();
+
         assertTrue(driver.getCurrentUrl().contains("notebooks"));
     }
 }
