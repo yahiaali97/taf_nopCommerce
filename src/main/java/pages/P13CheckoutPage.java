@@ -39,7 +39,7 @@ public class P13CheckoutPage extends PageBase {
         clickButton(driver.findElement(guestCheckoutBtn));
     }
 
-    public void fillBillingForm(String fName, String lName, String email, String country, String city, String address1, String postalCode, String phoneNumber) throws InterruptedException {
+    public void fillBillingForm(String fName, String lName, String email, String country, String city, String address1, String postalCode, String phoneNumber) {
         setTextElement(driver.findElement(billingFirstName), fName);
         setTextElement(driver.findElement(billingLastName), lName);
         setTextElement(driver.findElement(billingEmail), email);

@@ -71,7 +71,7 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
     }
 
     @Test(priority = 5)
-    public void checkoutAsRegisteredUser() throws InterruptedException {
+    public void checkoutAsRegisteredUser() {
         checkoutObject = new P13CheckoutPage(driver);
         orderDetailsObject = new P14OrderDetailsPage(driver);
 
