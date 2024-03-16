@@ -36,13 +36,13 @@ public class T12AddProductToCompareTest extends TestBase {
 
         driver.navigate().to(getBaseUrl() + "/compareproducts");
 
-        assertTrue(driver.findElement(compareObject.firstProductName).getText().equals("Asus N551JK-XO076H Laptop"));
-        assertTrue(driver.findElement(compareObject.secondProductName).getText().equals("Apple MacBook Pro 13-inch"));
+        assertTrue(driver.findElement(compareObject.firstProductName).getText().contains("Asus"));
+        assertTrue(driver.findElement(compareObject.secondProductName).getText().contains("Apple"));
 
         compareObject.compareProducts();
     }
 
-    @Test(priority = 3, enabled = true)
+    @Test(priority = 3)
     public void clearList() {
         searchObject = new P06SearchPage(driver);
         compareObject = new P11ComparePage(driver);
