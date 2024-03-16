@@ -10,7 +10,7 @@ public class P14OrderDetailsPage extends PageBase {
     }
 
     public By orderDetailsLink = By.linkText("Click here for order details.");
-    By printInvoiceLink = By.cssSelector("a.button-2 print-order-button");
+    By printInvoiceLink = By.xpath("//a[@class='button-2 print-order-button']");
     public By pdfInvoiceLink = By.xpath("//a[@class='button-2 pdf-invoice-button']");
 
     public void switchToOrderDetails() {

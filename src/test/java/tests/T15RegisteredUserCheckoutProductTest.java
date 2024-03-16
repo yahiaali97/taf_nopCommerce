@@ -22,7 +22,7 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
     P12ShoppingCartPage shoppingCartObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test126@example.com";
+    String email = "test131@example.com";
     String password = "123456";
     String billingFirstName = "";
     String billingLastName = "";
@@ -97,5 +97,6 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(d -> driver.findElement(orderDetailsObject.pdfInvoiceLink).isDisplayed());
         orderDetailsObject.DownloadPDFInvoice();
+        orderDetailsObject.PrintOrderDetails();
     }
 }

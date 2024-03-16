@@ -15,7 +15,7 @@ public class T02LoginTest extends TestBase {
     P03LoginPage loginObject;
     String fName = "Robert";
     String lName = "John";
-    String email = "test91@example.com";
+    String email = "test132@example.com";
     String password = "123456";
 
     @Test(priority = 1)

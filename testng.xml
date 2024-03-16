@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test name="Regression Suite">
+<suite name="TestSuite">
+    <test name="RegressionTest" preserve-order="false">
         <classes>
             <class name="tests.T01RegistrationTest"/>
             <class name="tests.T02LoginTest"/>
+            <class name="tests.T03ContactUsTest"/>
             <class name="tests.T04MyAccountTest"/>
             <class name="tests.T05SearchTest"></class>
+            <class name="tests.T06SearchWithAutoSuggestTest"></class>
+            <class name="tests.T07EmailFriendTest"></class>
+            <class name="tests.T08ChangeCurrencyTest"></class>
+            <class name="tests.T09AddProductReviewTest"></class>
+            <class name="tests.T10ProductHoverMenuTest"></class>
+            <class name="tests.T11AddToWishlistTest"></class>
+            <class name="tests.T12AddProductToCompareTest"></class>
+            <class name="tests.T13AddToCartTest"></class>
+            <class name="tests.T14GuestUserCheckoutProductTest"></class>
+            <class name="tests.T15RegisteredUserCheckoutProductTest"></class>
         </classes>
     </test>
 </suite>
