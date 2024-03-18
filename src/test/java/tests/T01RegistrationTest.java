@@ -8,7 +8,7 @@ import pages.P02RegistrationPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class T01RegistrationTestWithJavaFaker extends TestBase {
+public class T01RegistrationTest extends TestBase {
 
     P01HomePage homeObject;
     P02RegistrationPage registerObject;
@@ -27,11 +27,6 @@ public class T01RegistrationTestWithJavaFaker extends TestBase {
 
         homeObject.openRegisterPage();
         registerObject.userRegistration(firstname, lastname, email, password);
-
-        System.out.println(firstname);
-        System.out.println(lastname);
-        System.out.println(email);
-        System.out.println(password);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));

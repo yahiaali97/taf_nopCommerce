@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import pages.P06SearchPage;
 import pages.P12ShoppingCartPage;
@@ -12,9 +13,11 @@ public class T14GuestUserCheckoutProductTest extends TestBase {
     P06SearchPage searchObject;
     P12ShoppingCartPage shoppingCartObject;
     P13CheckoutPage checkoutObject;
-    String billingFirstName = "ahmed";
-    String billingLastName = "ahmed";
-    String billingEmail = "ahmed@example.com";
+
+    Faker fakeData = new Faker();
+    String billingFirstName = fakeData.name().firstName();
+    String billingLastName = fakeData.name().lastName();
+    String billingEmail = fakeData.internet().emailAddress();
     String billingCountry = "Egypt";
     String billingCity = "Giza";
     String billingAddress1 = "Giza";

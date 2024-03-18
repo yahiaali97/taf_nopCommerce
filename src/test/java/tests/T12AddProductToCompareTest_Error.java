@@ -7,7 +7,7 @@ import pages.P11ComparePage;
 
 import static org.testng.Assert.assertTrue;
 
-public class T12AddProductToCompareTest extends TestBase {
+public class T12AddProductToCompareTest_Error extends TestBase {
     P06SearchPage searchObject;
     P11ComparePage compareObject;
     String firstProduct = "Apple MacBook Pro 13-inch";
@@ -36,8 +36,8 @@ public class T12AddProductToCompareTest extends TestBase {
 
         driver.navigate().to(getBaseUrl() + "/compareproducts");
 
-        assertTrue(driver.findElement(compareObject.firstProductName).getText().contains("Asus"));
-        assertTrue(driver.findElement(compareObject.secondProductName).getText().contains("Apple"));
+        assertTrue(driver.findElement(compareObject.firstProductName).getText().contains("Apple"));
+        assertTrue(driver.findElement(compareObject.secondProductName).getText().contains("Asus"));
 
         compareObject.compareProducts();
     }

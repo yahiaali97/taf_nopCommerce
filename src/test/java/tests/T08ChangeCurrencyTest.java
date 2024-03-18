@@ -1,10 +1,9 @@
 package tests;
 
 import base.TestBase;
-import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pages.P01HomePage;
 import pages.P06SearchPage;
@@ -27,22 +26,15 @@ public class T08ChangeCurrencyTest extends TestBase {
     }
 
     @Test(priority = 2)
-    public void UserCanSearchWithAutoSuggest() {
+    public void UserCanSearchWithAutoSuggest() throws InterruptedException {
         searchObject = new P06SearchPage(driver);
         detailsObject = new P07ProductDetailsPage(driver);
 
+        Thread.sleep(500);
         searchObject.ProductSearchUsingAutoSuggest("mac");
 
-        Wait<WebDriver> wait =
-                new FluentWait<>(driver)
-                        .withTimeout(Duration.ofSeconds(5))
-                        .ignoring(ElementNotInteractableException.class);
-
-        wait.until(
-                d -> {
-                    driver.findElement(detailsObject.productPriceLbl).isDisplayed();
-                    return true;
-                });
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(d -> driver.findElement(detailsObject.productPriceLbl).isDisplayed());
 
         System.out.println(driver.findElement(detailsObject.productPriceLbl).getText());
         assertTrue(driver.findElement(detailsObject.productPriceLbl).getText()

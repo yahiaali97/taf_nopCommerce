@@ -7,11 +7,11 @@ import pages.P04ContactUsPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class T03ContactUsTest extends TestBase {
+public class T03ContactUsTest_ErrorUnexpectedAlert extends TestBase {
     P01HomePage homeObject;
     P04ContactUsPage contactUsObject;
-    String name = "Jaden";
-    String email = "jaden@example.com";
+    String name = "robert";
+    String email = "robert@example.com";
     String inquiry = "I can't add items to the cart";
 
     @Test

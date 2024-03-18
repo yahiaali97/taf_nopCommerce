@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -13,11 +14,12 @@ public class T07EmailFriendTest extends TestBase {
     P06SearchPage searchObject;
     P08EmailFriendPage emailFriendObject;
 
-    String fName = "Robert";
-    String lName = "John";
-    String email = "test90@example.com";
+    Faker fakeData = new Faker();
+    String firstname = fakeData.name().firstName();
+    String lastname = fakeData.name().lastName();
+    String email = fakeData.internet().emailAddress();
     String personalMsg = "This product is very good for you";
-    String password = "123456";
+    String password = fakeData.number().digits(8).toString();
 
     @Test(priority = 1)
     public void userRegistration() {
@@ -25,7 +27,7 @@ public class T07EmailFriendTest extends TestBase {
         registerObject = new P02RegistrationPage(driver);
 
         homeObject.openRegisterPage();
-        registerObject.userRegistration(fName, lName, email, password);
+        registerObject.userRegistration(firstname, lastname, email, password);
 
         assertTrue(driver.findElement(registerObject.resultMsg)
                 .getText()

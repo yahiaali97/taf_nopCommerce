@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,10 +21,11 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
     P13CheckoutPage checkoutObject;
     P14OrderDetailsPage orderDetailsObject;
     P12ShoppingCartPage shoppingCartObject;
-    String fName = "Robert";
-    String lName = "John";
-    String email = "test131@example.com";
-    String password = "123456";
+    Faker fakeData = new Faker();
+    String firstname = "Robert";
+    String lastname = "John";
+    String email = fakeData.internet().emailAddress();
+    String password = fakeData.number().digits(8).toString();
     String billingFirstName = "";
     String billingLastName = "";
     String billingEmail = "";
@@ -33,13 +35,14 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
     String billingPostalCode = "12568";
     String billingPhoneNumber = "0100000000";
 
+
     @Test(priority = 1, alwaysRun = true)
     public void UserRegister() {
         homeObject = new P01HomePage(driver);
         registerObject = new P02RegistrationPage(driver);
 
         homeObject.openRegisterPage();
-        registerObject.userRegistration(fName, lName, email, password);
+        registerObject.userRegistration(firstname, lastname, email, password);
     }
 
     @Test(priority = 2)
@@ -71,7 +74,7 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
     }
 
     @Test(priority = 5)
-    public void checkoutAsRegisteredUser() {
+    public void checkoutAsRegisteredUser() throws InterruptedException {
         checkoutObject = new P13CheckoutPage(driver);
         orderDetailsObject = new P14OrderDetailsPage(driver);
 
@@ -97,6 +100,7 @@ public class T15RegisteredUserCheckoutProductTest extends TestBase {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(d -> driver.findElement(orderDetailsObject.pdfInvoiceLink).isDisplayed());
         orderDetailsObject.DownloadPDFInvoice();
+        Thread.sleep(3000);
         orderDetailsObject.PrintOrderDetails();
     }
 }

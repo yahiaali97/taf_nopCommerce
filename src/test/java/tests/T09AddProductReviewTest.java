@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -12,10 +13,11 @@ public class T09AddProductReviewTest extends TestBase {
     P03LoginPage loginObject;
     P06SearchPage searchObject;
     P09AddProductReviewPage reviewObject;
-    String fName = "Robert";
-    String lName = "John";
-    String email = "test102@example.com";
-    String password = "123456";
+    Faker fakeData = new Faker();
+    String firstname = fakeData.name().firstName();
+    String lastname = fakeData.name().lastName();
+    String email = fakeData.internet().emailAddress();
+    String password = fakeData.number().digits(8).toString();
     String reviewTitle = "Recommend the product";
     String reviewTxtBox = "This product helped me so much";
 
@@ -25,7 +27,7 @@ public class T09AddProductReviewTest extends TestBase {
         registerObject = new P02RegistrationPage(driver);
 
         homeObject.openRegisterPage();
-        registerObject.userRegistration(fName, lName, email, password);
+        registerObject.userRegistration(firstname, lastname, email, password);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));

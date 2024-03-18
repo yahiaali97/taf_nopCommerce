@@ -17,8 +17,7 @@ public class P01HomePage extends PageBase {
 
     By currencyDDL = By.id("customerCurrency");
     By registerLink = By.linkText("Register");
-
-    public By loginLink = By.linkText("Log in");
+    public By loginLink = By.cssSelector("a.ico-login");
     By contactUsLink = By.xpath("//a[@href=\"/contactus\"]");
     By computerMenu = By.linkText("Computers");
     By notebooksMenu = By.linkText("Notebooks");

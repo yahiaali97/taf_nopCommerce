@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import pages.P01HomePage;
 import pages.P02RegistrationPage;
@@ -15,11 +16,13 @@ public class T04MyAccountTest extends TestBase {
     P02RegistrationPage registerObject;
     P03LoginPage loginObject;
     P05MyAccountPage p05MyAccountPageObject;
-    String fName = "Robert";
-    String lName = "John";
-    String email = "test100@example.com";
-    String oldPassword = "123456";
-    String newPassword = "123456789";
+
+    Faker fakeData = new Faker();
+    String firstname = fakeData.name().firstName();
+    String lastname = fakeData.name().firstName();
+    String email = fakeData.internet().emailAddress();
+    String oldPassword = fakeData.number().digits(8).toString();
+    String newPassword = fakeData.number().digits(8).toString();
 
     @Test(priority = 1)
     public void UserRegisterSuccessfully() {
@@ -27,7 +30,7 @@ public class T04MyAccountTest extends TestBase {
         registerObject = new P02RegistrationPage(driver);
 
         homeObject.openRegisterPage();
-        registerObject.userRegistration(fName, lName, email, oldPassword);
+        registerObject.userRegistration(firstname, lastname, email, oldPassword);
 
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
