@@ -3,7 +3,7 @@
 <suite name="TestSuite">
     <test name="RegressionTest" preserve-order="false">
         <classes>
-            <class name="tests.T01RegistrationTest"/>
+            <class name="tests.T01RegistrationTestWithJavaFaker"/>
         </classes>
     </test>
 </suite>
