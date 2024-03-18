@@ -16,7 +16,7 @@ public class T12_CompareProducts extends TestBase {
     @Test(priority = 1)
     public void refreshHomePage() {
         driver.navigate().to(getBaseUrl());
-    } // Auto Suggest T03_ProductSearch doesn't work at first test
+    }
 
     @Test(priority = 2)
     public void userCanCompareProducts() {

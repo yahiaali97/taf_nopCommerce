@@ -13,7 +13,7 @@ public class T09_AddToWishlist extends TestBase {
     String productName = "Apple MacBook Pro 13-inch";
 
     @Test(priority = 1)
-    public void goToHomeAgainFirst() {
+    public void refreshHomePage() {
         driver.navigate().to("https://demo.nopcommerce.com/");
     }
 
