@@ -10,7 +10,7 @@ public class P01_Registration extends PageBase {
         super(driver);
     }
 
-    private final By registerLink = By.linkText("Register");
+    private final By registerLink = By.xpath("//div[@class='header-links']//a[@class='ico-register']");
     private final By genderSelect = By.id("gender-male");
     private final By fnBox = By.id("FirstName");
     private final By lnBox = By.id("LastName");

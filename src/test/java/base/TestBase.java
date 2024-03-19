@@ -1,17 +1,16 @@
 package base;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 import utilities.Helper;
 
 import java.util.HashMap;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests {
     protected WebDriver driver;
 
     public static String userDir = System.getProperty("user.dir");
