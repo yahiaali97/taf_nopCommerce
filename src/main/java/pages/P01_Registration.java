@@ -10,7 +10,6 @@ public class P01_Registration extends PageBase {
         super(driver);
     }
 
-    private final By registerLink = By.xpath("//div[@class='header-links']//a[@class='ico-register']");
     private final By genderSelect = By.id("gender-male");
     private final By fnBox = By.id("FirstName");
     private final By lnBox = By.id("LastName");
@@ -21,9 +20,6 @@ public class P01_Registration extends PageBase {
     public By resultMsg = By.cssSelector("div.result");
     public By logoutLink = By.xpath("//a[@href='/logout']");
 
-    public void openRegisterPage() {
-        clickButton(driver.findElement(registerLink));
-    }
 
     public void userRegistration(String firstName, String lastName, String emailAddress, String pass) {
         clickButton(driver.findElement(genderSelect));

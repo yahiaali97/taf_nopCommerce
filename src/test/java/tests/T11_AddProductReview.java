@@ -3,14 +3,12 @@ package tests;
 import base.TestBase;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
-import pages.P01_Registration;
-import pages.P02_Login;
-import pages.P03_ProductSearch;
-import pages.P11_AddProductReview;
+import pages.*;
 
 import static org.testng.Assert.assertTrue;
 
 public class T11_AddProductReview extends TestBase {
+    HomePage homeObject;
     P01_Registration registerObject;
     P02_Login loginObject;
     P03_ProductSearch searchObject;
@@ -25,8 +23,9 @@ public class T11_AddProductReview extends TestBase {
 
     @Test(priority = 1, alwaysRun = true)
     public void UserRegister() {
+        homeObject = new HomePage(driver);
         registerObject = new P01_Registration(driver);
-        registerObject.openRegisterPage();
+        homeObject.openRegisterPage();
         registerObject.userRegistration(firstname, lastname, email, password);
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
@@ -35,7 +34,7 @@ public class T11_AddProductReview extends TestBase {
     @Test(priority = 2)
     public void UserLogin() {
         loginObject = new P02_Login(driver);
-        loginObject.openLoginPage();
+        homeObject.openLoginPage();
         loginObject.userLogin(email, password);
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }

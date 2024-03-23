@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class P04_ProductHoverMenu extends PageBase {
+
     public P04_ProductHoverMenu(WebDriver driver) {
         super(driver);
         action = new Actions(driver);

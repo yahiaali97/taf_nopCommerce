@@ -3,6 +3,7 @@ package tests;
 import base.TestBase;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
+import pages.HomePage;
 import pages.P01_Registration;
 import pages.P02_Login;
 import pages.P07_ChangePassword;
@@ -10,7 +11,7 @@ import pages.P07_ChangePassword;
 import static org.testng.Assert.assertTrue;
 
 public class T07_ChangePassword extends TestBase {
-
+    HomePage homeObject;
     P01_Registration registerObject;
     P02_Login loginObject;
     P07_ChangePassword myAccountObject;
@@ -23,8 +24,9 @@ public class T07_ChangePassword extends TestBase {
 
     @Test(priority = 1)
     public void UserRegisterSuccessfully() {
+        homeObject = new HomePage(driver);
         registerObject = new P01_Registration(driver);
-        registerObject.openRegisterPage();
+        homeObject.openRegisterPage();
         registerObject.userRegistration(firstname, lastname, email, oldPassword);
         assertTrue(driver.findElement(registerObject.resultMsg).getText()
                 .contains("Your registration completed"));
@@ -33,7 +35,7 @@ public class T07_ChangePassword extends TestBase {
     @Test(priority = 2)
     public void RegisteredUserCanLogin() {
         loginObject = new P02_Login(driver);
-        loginObject.openLoginPage();
+        homeObject.openLoginPage();
         loginObject.userLogin(email, oldPassword);
         assertTrue(driver.findElement(registerObject.logoutLink).isDisplayed());
     }
@@ -50,6 +52,6 @@ public class T07_ChangePassword extends TestBase {
     @Test(priority = 4)
     public void UserCanLogout() throws InterruptedException {
         registerObject.usrLogout();
-        assertTrue(driver.findElement(loginObject.loginLink).isDisplayed());
+        assertTrue(driver.findElement(homeObject.loginLink).isDisplayed());
     }
 }

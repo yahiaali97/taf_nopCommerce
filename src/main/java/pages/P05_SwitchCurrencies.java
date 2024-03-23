@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class P05_SwitchCurrencies extends PageBase {
+
     public P05_SwitchCurrencies(WebDriver driver) {
         super(driver);
     }
