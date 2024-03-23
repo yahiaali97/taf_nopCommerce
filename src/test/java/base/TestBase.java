@@ -24,7 +24,7 @@ public class TestBase {
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("applicationCacheEnabled", false);
         chromeOptions.addArguments("--disable-extensions");
-        //chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--headless");
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadPath);
         chromeOptions.setExperimentalOption("prefs", chromePrefs);
