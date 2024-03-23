@@ -2,6 +2,9 @@ package tests;
 
 import base.TestBase;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.P01_Registration;
@@ -18,6 +21,8 @@ public class T01_Registration extends TestBase {
     String password = fakeData.number().digits(8);
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("User Registration Test Case")
     public void userRegistration() {
         homeObject = new HomePage(driver);
         registerObject = new P01_Registration(driver);
