@@ -14,7 +14,7 @@ public class T01_Registration extends TestBase {
     String firstname = fakeData.name().firstName();
     String lastname = fakeData.name().firstName();
     String email = fakeData.internet().emailAddress();
-    String password = fakeData.number().digits(8).toString();
+    String password = fakeData.number().digits(8);
 
     @Test
     public void userRegistration() {

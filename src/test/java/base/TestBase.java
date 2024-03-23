@@ -1,16 +1,18 @@
 package base;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import utilities.Helper;
 
 import java.util.HashMap;
 
-public class TestBase extends AbstractTestNGCucumberTests {
+public class TestBase {
     protected WebDriver driver;
 
     public static String userDir = System.getProperty("user.dir");
@@ -22,6 +24,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("applicationCacheEnabled", false);
         chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--headless");
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadPath);
         chromeOptions.setExperimentalOption("prefs", chromePrefs);
