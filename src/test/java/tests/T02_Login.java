@@ -2,8 +2,6 @@ package tests;
 
 import base.TestBase;
 import com.github.javafaker.Faker;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.P01_Registration;
